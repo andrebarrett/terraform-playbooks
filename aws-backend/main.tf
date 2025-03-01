@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-playbooks-state"
+    bucket         = "terraform-playbooks-state-1"
     key            = "bootstrap-ts-backend"
     region         = "us-east-1"
     dynamodb_table = "tf-state-lock"
@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "ts_bucket" {
-  bucket        = "terraform-playbooks-state"
+  bucket        = "terraform-playbooks-state-1"
   force_destroy = true
 }
 
